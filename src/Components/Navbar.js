@@ -12,10 +12,8 @@ export default function App() {
     <MDBNavbar light bgColor='light'>
       <MDBContainer fluid>
         <MDBNavbarBrand>Navbar</MDBNavbarBrand>
-        <MDBInputGroup tag="form" className='d-flex w-auto mb-3'>
-          <input className='form-control' placeholder="Type query" aria-label="Search" type='Search' />
-          <MDBBtn outline>Search</MDBBtn>
-        </MDBInputGroup>
+        <span>All Product</span>
+        <button type="button" class="btn btn-dark">Dark(0)</button>
       </MDBContainer>
     </MDBNavbar>
   );
