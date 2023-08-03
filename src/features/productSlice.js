@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import ProductData from "../ProductData";
 
 const initialState = {
-    cart: [],
+    carts: [],
     items:ProductData,
     TotalQuantity:0,
     TotalQuality:0,
