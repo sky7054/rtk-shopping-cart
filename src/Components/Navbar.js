@@ -6,14 +6,15 @@ import {
   MDBBtn,
   MDBInputGroup
 } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 export default function App() {
   return (
     <MDBNavbar light bgColor='light'>
       <MDBContainer fluid>
         <MDBNavbarBrand>Navbar</MDBNavbarBrand>
-        <span>All Product</span>
-        <button type="button" class="btn btn-dark">Dark(0)</button>
+        <Link to="/home"><span>All Product</span></Link>
+        <Link to="/cart"><button type="button" class="btn btn-dark">Cart(0)</button></Link>
       </MDBContainer>
     </MDBNavbar>
   );
