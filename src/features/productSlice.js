@@ -4,8 +4,8 @@ import ProductData from "../ProductData";
 const initialState = {
     carts: [],
     items:ProductData,
-    TotalQuantity:0,
-    TotalQuality:0,
+    totalQuantity:0,
+    totalPrice:0,
 }
 
 export const productSlice = createSlice({
@@ -13,7 +13,7 @@ export const productSlice = createSlice({
     initialState,
     reducers:{
         addToCart : (state,action) => {
-            state.carts.push(action.payload);
+                state.carts.push(action.payload);
         },
         getCartTotal : (state,action) => {
 
