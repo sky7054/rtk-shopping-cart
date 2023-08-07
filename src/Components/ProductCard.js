@@ -22,7 +22,7 @@ const dispatch = useDispatch();
       <MDBRow className="mb-3">
        {items.map((item)=>(
          <MDBCol size="3" key={item.id}>
-         <MDBCard>
+         <MDBCard> 
            <MDBCardImage
              src= {item.image}
              position="top"
