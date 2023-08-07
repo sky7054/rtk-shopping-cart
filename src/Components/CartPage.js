@@ -12,7 +12,7 @@ const CartPage = () => {
   const { carts, totalQuantity, totalPrice } = useSelector(
     (state) => state.allCarts
   );
-  
+
 
   const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ const CartPage = () => {
             <div className="col-md-8">
               <div className="card mb-4">
                 <div className="card-header py-3">
-                  {/* <h5 className="mb-0">Cart - {carts.length} items</h5> */}
+                  <h5 className="mb-0">Cart - {carts.length} items</h5>
                 </div>
                 <div className="card-body">
                   {carts.map((data) => (

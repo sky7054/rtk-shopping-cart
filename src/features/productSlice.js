@@ -40,6 +40,7 @@ export const productSlice = createSlice({
         },
         removeItem : (state,action) =>{
 
+          state.carts = state.carts.filter((item) => item.id !== action.payload);
         },
         decreaseItemQuantity : (state,action)  =>{
 
