@@ -13,9 +13,29 @@ export const productSlice = createSlice({
     initialState,
     reducers:{
         addToCart : (state,action) => {
-                state.carts.push(action.payload);
+            let find = state.carts.findIndex((item) => item.id === action.payload.id);
+      if (find >= 0) {
+        state.carts[find].quantity += 1;
+      } else {
+        state.carts.push(action.payload);
+      }
         },
-        getCartTotal : (state,action) => {
+        getCartTotal : (state) => {
+          let{totalQuantity,totalPrice} = state.carts.reduce(
+            (cartTotal,cartItem) =>{
+              const {price,quantity}  = cartItem;
+              const itemTotal = (price*quantity)
+              cartTotal.totalPrice += itemTotal;
+              cartTotal.totalQuantity += quantity;
+              return cartTotal;
+            },
+            {
+              totalPrice : 0,
+              totalQuantity : 0
+            }
+          );
+          state.totalPrice = parseInt(totalPrice.toFixed(2));
+          state.totalQuantity = totalQuantity;
 
         },
         removeItem : (state,action) =>{

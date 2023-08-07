@@ -12,6 +12,7 @@ const CartPage = () => {
   const { carts, totalQuantity, totalPrice } = useSelector(
     (state) => state.allCarts
   );
+  
 
   const dispatch = useDispatch();
 
@@ -86,7 +87,7 @@ const CartPage = () => {
                               onChange={() => null}
                             />
                             <label className="form-label" for="form1">
-                              Quantity
+                             {data.quantity}
                             </label>
                           </div>
 
