@@ -42,11 +42,21 @@ export const productSlice = createSlice({
 
           state.carts = state.carts.filter((item) => item.id !== action.payload);
         },
-        decreaseItemQuantity : (state,action)  =>{
-
-        },
-        increaseItemQuantity : (state,action) => {
-
+        increaseItemQuantity: (state, action) => {
+           state.carts = state.carts.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+    },
+    decreaseItemQuantity : (state,action) => {
+        state.carts = state.carts.map((item)=>{
+          if(item.id === action.payload){
+            return{...item,quantity : item.quantity - 1}
+          }
+          return item;
+        })
         }
 
     }
